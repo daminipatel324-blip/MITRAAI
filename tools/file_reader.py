@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from tools.txt_reader import read_txt
+from tools.pdf_reader import read_pdf
 
 
 def read_file(file_path: str):
@@ -9,10 +10,17 @@ def read_file(file_path: str):
 
     extension = path.suffix.lower()
 
-    if extension == ".txt":
-        return read_txt(file_path)
+    readers = {
+        ".txt": read_txt,
+        ".pdf": read_pdf,
+    }
 
-    return (
-        False,
-        f"❌ '{extension}' files are not supported yet."
-    )
+    reader = readers.get(extension)
+
+    if reader is None:
+        return (
+            False,
+            f"❌ '{extension}' files are not supported yet."
+        )
+
+    return reader(file_path)

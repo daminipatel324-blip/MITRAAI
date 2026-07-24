@@ -1,8 +1,10 @@
 from brain import get_ai_response
 from memory import load_facts, save_facts, extract_facts
 from prompts import build_system_prompt
+
 from core.router import run_tool
 from core.history import save_chat
+from core.context import build_context
 
 
 class MITRAAgent:
@@ -14,15 +16,15 @@ class MITRAAgent:
         self.messages = [
             {
                 "role": "system",
-                "content": build_system_prompt(self.facts)
+                "content": build_system_prompt(self.facts),
             }
         ]
 
     def chat(self, user_input):
 
-        # ----------------------------
+        # -------------------------
         # Update Memory
-        # ----------------------------
+        # -------------------------
         new_facts = extract_facts(user_input)
 
         if new_facts:
@@ -37,24 +39,19 @@ class MITRAAgent:
 
             print("✅ Memory Updated!")
 
-        # ----------------------------
-        # Save User Message
-        # ----------------------------
-
-        self.messages.append(
-            {
-                "role": "user",
-                "content": user_input,
-            }
-        )
-
-        # ----------------------------
-        # Tool Router
-        # ----------------------------
-
+        # -------------------------
+        # Check Tools
+        # -------------------------
         tool_used, tool_response = run_tool(user_input)
 
         if tool_used:
+
+            self.messages.append(
+                {
+                    "role": "user",
+                    "content": user_input,
+                }
+            )
 
             self.messages.append(
                 {
@@ -67,9 +64,17 @@ class MITRAAgent:
 
             return tool_response
 
-        # ----------------------------
-        # AI Response
-        # ----------------------------
+        # -------------------------
+        # Build Context
+        # -------------------------
+        prompt = build_context(user_input)
+
+        self.messages.append(
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        )
 
         ai_reply = get_ai_response(self.messages)
 

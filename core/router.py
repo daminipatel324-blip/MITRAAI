@@ -1,7 +1,7 @@
 from tools.calculator import calculate
 from tools.time_tool import get_current_time, get_current_date
 from tools.system_tool import get_system_info
-from tools.file_reader import read_file
+from documents.loader import load_document
 
 
 def run_tool(user_input):
@@ -44,13 +44,13 @@ def run_tool(user_input):
             return True, answer
 
     # -------------------------
-    # File Reader
+    # Document Loader
     # -------------------------
     if text.startswith("read "):
 
         file_path = user_input[5:].strip()
 
-        success, result = read_file(file_path)
+        success, result = load_document(file_path)
 
         return True, result
 
