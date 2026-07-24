@@ -1,0 +1,7 @@
+Hello Damini.
+
+Welcome to MITRAAI.
+
+This is the first document.
+
+MITRAAI can now read files.

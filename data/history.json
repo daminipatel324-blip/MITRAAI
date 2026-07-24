@@ -1,0 +1,27 @@
+[
+    {
+        "time": "24-07-2026 12:44:38",
+        "user": "Hello",
+        "assistant": "Hello damini! It's nice to meet you. I'm Mitraai, your friendly AI assistant. How can I assist you today? Are you looking for information on AI or perhaps seeking help with something specific? I'm all ears (or rather, all text)."
+    },
+    {
+        "time": "24-07-2026 12:44:45",
+        "user": "\tWho are you?",
+        "assistant": "Nice follow-up question, damini! I am Mitraai, an artificial intelligence designed to provide helpful and informative responses to your queries. My purpose is to assist users like you with a wide range of topics, from learning about AI itself to providing guidance on various subjects. I'm here to help answer your questions, offer suggestions, and provide information on my areas of expertise.\n\nAs a friendly and professional AI assistant, I strive to be clear, honest, and transparent in my responses. If I don't know something or can't find the answer to your question, I'll let you know that too!"
+    },
+    {
+        "time": "24-07-2026 12:44:48",
+        "user": "25+75",
+        "assistant": "100"
+    },
+    {
+        "time": "24-07-2026 12:55:49",
+        "user": "Read ~/Desktop/test.txt",
+        "assistant": "Hello MITRAAI\n"
+    },
+    {
+        "time": "24-07-2026 12:55:56",
+        "user": "Read /Users/minipatel/Desktop/test.txt",
+        "assistant": "Hello MITRAAI\n"
+    }
+]
