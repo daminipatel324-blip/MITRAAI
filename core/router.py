@@ -1,12 +1,23 @@
 from tools.calculator import calculate
 from tools.time_tool import get_current_time, get_current_date
-from tools.system_tool import get_system_info
+from tools.system_tool import (
+    get_system_info,
+    run_system_command,
+)
 from documents.loader import load_document
 
 
 def run_tool(user_input):
 
     text = user_input.lower().strip()
+
+    # -------------------------
+    # System Commands
+    # -------------------------
+    system_result = run_system_command(text)
+
+    if system_result is not None:
+        return True, system_result
 
     # -------------------------
     # Time

@@ -1,12 +1,7 @@
-from ollama import chat
-from config import MODEL_NAME
+from llm.manager import LLMManager
+
+_manager = LLMManager()
 
 
 def get_ai_response(messages):
-
-    response = chat(
-        model=MODEL_NAME,
-        messages=messages
-    )
-
-    return response["message"]["content"]
+    return _manager.generate(messages)

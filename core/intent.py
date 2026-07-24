@@ -26,11 +26,26 @@ def detect_intent(user_input: str) -> str:
     if text in ("time", "date"):
         return "tool"
 
+    # Safe system commands
+    system_commands = {
+        "pwd",
+        "ls",
+        "whoami",
+        "which python3",
+        "which pip",
+        "python3 --version",
+        "pip --version",
+    }
+
+    if text in system_commands:
+        return "tool"
+
     if (
         text.startswith("show system")
         or text.startswith("system info")
         or text.startswith("python version")
         or text.startswith("current folder")
+        or text.startswith("operating system")
     ):
         return "tool"
 
