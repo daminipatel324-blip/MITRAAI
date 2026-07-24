@@ -5,6 +5,7 @@ from prompts import build_system_prompt
 from core.router import run_tool
 from core.history import save_chat
 from core.context import build_context
+from core.intent import detect_intent
 
 
 class MITRAAgent:
@@ -25,6 +26,7 @@ class MITRAAgent:
         # -------------------------
         # Update Memory
         # -------------------------
+
         new_facts = extract_facts(user_input)
 
         if new_facts:
@@ -40,34 +42,47 @@ class MITRAAgent:
             print("✅ Memory Updated!")
 
         # -------------------------
-        # Check Tools
+        # Detect Intent
         # -------------------------
-        tool_used, tool_response = run_tool(user_input)
 
-        if tool_used:
-
-            self.messages.append(
-                {
-                    "role": "user",
-                    "content": user_input,
-                }
-            )
-
-            self.messages.append(
-                {
-                    "role": "assistant",
-                    "content": tool_response,
-                }
-            )
-
-            save_chat(user_input, tool_response)
-
-            return tool_response
+        intent = detect_intent(user_input)
 
         # -------------------------
-        # Build Context
+        # Tool
         # -------------------------
-        prompt = build_context(user_input)
+
+        if intent == "tool":
+
+            tool_used, tool_response = run_tool(user_input)
+
+            if tool_used:
+
+                self.messages.append(
+                    {
+                        "role": "user",
+                        "content": user_input,
+                    }
+                )
+
+                self.messages.append(
+                    {
+                        "role": "assistant",
+                        "content": tool_response,
+                    }
+                )
+
+                save_chat(user_input, tool_response)
+
+                return tool_response
+
+        # -------------------------
+        # Build Prompt
+        # -------------------------
+
+        if intent == "document":
+            prompt = build_context(user_input)
+        else:
+            prompt = user_input
 
         self.messages.append(
             {

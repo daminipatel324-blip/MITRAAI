@@ -93,5 +93,65 @@
         "time": "24-07-2026 15:11:44",
         "user": "Which operating systems do I know?",
         "assistant": "\nSystem : Darwin\nRelease : 24.6.0\nPython : 3.14.0\nCurrent Folder :\n/Users/minipatel/Desktop/AI-Agent-Learning/MITRAAI\n"
+    },
+    {
+        "time": "24-07-2026 15:15:42",
+        "user": "Read ~/Desktop/Damini_Purani_Technical_Support_CV.pdf",
+        "assistant": "\u2705 Document 'Damini_Purani_Technical_Support_CV.pdf' loaded successfully."
+    },
+    {
+        "time": "24-07-2026 15:15:47",
+        "user": "Which operating systems do I know?",
+        "assistant": "According to the document, you have knowledge of Windows Operating Systems."
+    },
+    {
+        "time": "24-07-2026 15:16:02",
+        "user": "Who invented Python?",
+        "assistant": "I don't know who specifically invented Python. The document doesn't mention anything about Python or its inventor."
+    },
+    {
+        "time": "24-07-2026 15:16:15",
+        "user": "Show system info",
+        "assistant": "\nSystem : Darwin\nRelease : 24.6.0\nPython : 3.14.0\nCurrent Folder :\n/Users/minipatel/Desktop/AI-Agent-Learning/MITRAAI\n"
+    },
+    {
+        "time": "24-07-2026 15:16:22",
+        "user": "Python version",
+        "assistant": "\nSystem : Darwin\nRelease : 24.6.0\nPython : 3.14.0\nCurrent Folder :\n/Users/minipatel/Desktop/AI-Agent-Learning/MITRAAI\n"
+    },
+    {
+        "time": "24-07-2026 15:16:28",
+        "user": "Who invented Python?",
+        "assistant": "Sorry, I don't have that information in the document I was trained on. According to general knowledge, Python was created by Guido van Rossum, a Dutch computer programmer."
+    },
+    {
+        "time": "24-07-2026 15:18:26",
+        "user": "exit\\",
+        "assistant": "Exiting... Goodbye! It was nice assisting you with your questions about Damini Purani's CV. If you need anything else, feel free to ask!"
+    },
+    {
+        "time": "24-07-2026 15:18:35",
+        "user": "../venv/bin/python app.py",
+        "assistant": "It looks like you're trying to run a Python application!\n\nUnfortunately, I'm just an AI assistant and don't have the ability to execute code or access your local file system. However, if you'd like some guidance on how to run your application, I can try to provide assistance.\n\nCan you please tell me more about what `app.py` does? Is it a script that needs to be executed in order to perform some task?"
+    },
+    {
+        "time": "24-07-2026 15:18:51",
+        "user": "Read ~/Desktop/Damini_Purani_Technical_Support_CV.pdf",
+        "assistant": "\u2705 Document 'Damini_Purani_Technical_Support_CV.pdf' loaded successfully."
+    },
+    {
+        "time": "24-07-2026 15:19:01",
+        "user": "What are my skills?",
+        "assistant": "Hello damini!\n\nAccording to your CV, some of your key skills include:\n\n1. Technical Support\n2. Hardware & Software\n3. Troubleshooting\n4. Printer Installation & Configuration\n5. Windows Operating Systems\n6. Microsoft Excel\n7. User Account Management\n8. Data Management\n9. Network Basics (IP, DNS, Wi-Fi)\n10. Software Installation\n11. CCTV Management\n\nThese skills are listed under the \"KEY SKILLS\" section of your CV."
+    },
+    {
+        "time": "24-07-2026 15:19:07",
+        "user": "Who invented Python?",
+        "assistant": "The creator of Python is Guido van Rossum."
+    },
+    {
+        "time": "24-07-2026 15:19:15",
+        "user": "Show system info",
+        "assistant": "\nSystem : Darwin\nRelease : 24.6.0\nPython : 3.14.0\nCurrent Folder :\n/Users/minipatel/Desktop/AI-Agent-Learning/MITRAAI\n"
     }
 ]
